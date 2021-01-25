@@ -6,11 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Cw3.Controllers
 {
-    public class StudentsController : Controller
+    [Route("api/students")]
+    [ApiController]
+    public class StudentsController : ControllerBase
     {
-        public IActionResult Index()
+        [HttpGet]
+        public string GetStudents()
         {
-            return View();
+            return "Jan, Anna, Krzysztof";
         }
     }
 }
